@@ -1,0 +1,12 @@
+FROM qmkfm/qmk_cli
+
+# setup with root, required for flashing
+# writing /dev i.e. interacting with device bootloader requires root
+
+# clone and setup the latest qmk_firmware, cloning into /home/qmk/qmk_firmware
+RUN qmk setup -y -H /home/qmk/qmk_firmware
+
+WORKDIR /home/qmk/qmk_firmware
+COPY ./keyboards ./keyboards
+
+CMD ["bash"]
