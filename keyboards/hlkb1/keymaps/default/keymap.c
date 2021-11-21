@@ -21,12 +21,27 @@ enum custom_keycodes {
     ARROWFUNC,
 };
 
+// Tap Dance declarations
+enum {
+	TD_H_LEFT,
+	TD_J_DOWN,
+	TD_K_UP,
+	TD_L_RIGHT,
+};
+
+// Tap Dance definitions
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [TD_H_LEFT] = ACTION_TAP_DANCE_DOUBLE(KC_H, KC_LEFT),
+    [TD_J_DOWN] = ACTION_TAP_DANCE_DOUBLE(KC_J, KC_DOWN),
+    [TD_K_UP] = ACTION_TAP_DANCE_DOUBLE(KC_K, KC_UP),
+    [TD_L_RIGHT] = ACTION_TAP_DANCE_DOUBLE(KC_L, KC_RIGHT)
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 LAYOUT(
   KC_ESC, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_BSPC, 
-  KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_ENT, 
+  KC_CAPS, KC_A, KC_S, KC_D, KC_F, KC_G, TD(TD_H_LEFT), TD(TD_J_DOWN), TD(TD_K_UP), TD(TD_L_RIGHT), KC_ENT, 
   KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, MO(2), 
   KC_LCTL, KC_LGUI, KC_LALT, MO(3), KC_SPC, MO(1), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT),
 
