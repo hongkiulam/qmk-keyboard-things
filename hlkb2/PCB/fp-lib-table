@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name "contact_pad")(type "KiCad")(uri "${KIPRJMOD}/libraries/custom_contact_pad_footprint/contact_pad.pretty")(options "")(descr ""))
+  (lib (name "keyboard_parts")(type "KiCad")(uri "${KIPRJMOD}/libraries/keyboard_parts.pretty-master")(options "")(descr ""))
+  (lib (name "promicro")(type "KiCad")(uri "${KIPRJMOD}/libraries/ProMicroKiCad-master/promicro.pretty")(options "")(descr ""))
+)
