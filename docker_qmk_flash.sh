@@ -5,4 +5,4 @@ docker run --rm \
   --privileged -v /dev:/dev \
   -it \
   hkqmk-flash \
-  qmk compile -kb $1 -km $2:flash
+  qmk flash -kb $1 -km $2
