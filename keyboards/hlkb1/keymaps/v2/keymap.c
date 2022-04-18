@@ -61,7 +61,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case ARROWFUNC:
             if (record->event.pressed) {
-                SEND_STRING("() => {}"SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT)SS_TAP(X_LEFT));
+                SEND_STRING("() => {}");
             } else {
             }
             break;
