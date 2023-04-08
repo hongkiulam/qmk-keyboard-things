@@ -22,7 +22,7 @@ enum custom_keycodes {
 };
 
 // Tap Dance definitions
-qk_tap_dance_action_t tap_dance_actions[] = {};
+tap_dance_action_t tap_dance_actions[] = {};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -45,7 +45,7 @@ LAYOUT(
   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MO(3), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 
 LAYOUT(
-    RESET, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, IFSTATEMENT, KC_TRNS, KC_TRNS, KC_TRNS, 
+    QK_BOOTLOADER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, IFSTATEMENT, KC_TRNS, KC_TRNS, KC_TRNS, 
     KC_TRNS, KC_VOLU, KC_BRIU, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_TRNS, 
     KC_TRNS, KC_VOLD, KC_BRID, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ARROWFUNC, KC_TRNS, 
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
@@ -61,7 +61,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             break;
         case ARROWFUNC:
             if (record->event.pressed) {
-                SEND_STRING("() => {}");
+                SEND_STRING("() => {}"SS_TAP(X_LEFT));
             } else {
             }
             break;

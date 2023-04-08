@@ -7,6 +7,12 @@ FROM qmkfm/qmk_cli
 RUN qmk setup -y -H /home/qmk/qmk_firmware
 
 WORKDIR /home/qmk/qmk_firmware
+
+# setup build environment
+ENV QMK_FIRMWARE_DIR=/home/qmk/qmk_firmware
+RUN apt-get update && apt-get install sudo -y
+RUN . ./util/install/debian.sh && _qmk_install
+
 COPY ./keyboards ./keyboards
 
 CMD ["bash"]
